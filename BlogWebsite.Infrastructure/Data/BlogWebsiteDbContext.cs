@@ -18,13 +18,13 @@ namespace BlogWebsite.Infrastructure.Data
         {
             
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
 
 
 
 
-            base.OnConfiguring(optionsBuilder);
+            base.OnModelCreating(builder);
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Comment> Comments { get; set; }
