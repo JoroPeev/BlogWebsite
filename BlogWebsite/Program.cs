@@ -1,9 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddAplicationIdentity(builder.Configuration);
+builder.Services.AddAplicationDbContext(builder.Configuration);
+
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAplicationServices();
+
 
 var app = builder.Build();
 
